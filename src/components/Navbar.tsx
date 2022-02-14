@@ -8,9 +8,9 @@ export function Navbar() {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    position: fixed;
+    position: sticky;
     left: 0;
-    top: 0;
+    top: 2%;
     width: 100%;
     z-index: 1;
     background-color: transparent;
@@ -145,7 +145,7 @@ export function Navbar() {
     margin: 0px;
     width: 120px;
     text-align: left;
-    margin-right: 15rem;
+    margin-right: 5rem;
     font-size: 1.7rem;
     letter-spacing: 3px;
 
