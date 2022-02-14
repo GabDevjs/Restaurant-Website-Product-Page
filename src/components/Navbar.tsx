@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styled, { css } from "styled-components";
 import { Link } from "react-scroll";
-import { menuDate } from "../data/menuDate";
+import { menuDate } from "../data/MenuDate";
 
 export function Navbar() {
   const Nav = styled.nav`
@@ -59,6 +59,7 @@ export function Navbar() {
       padding: 0px 30px;
 
       .menu-icon {
+        display: block;
         cursor: pointer;
         float: right;
         padding: 28px 20px;
@@ -110,10 +111,6 @@ export function Navbar() {
         transform: rotate(45deg);
         top: 0;
         background-color: #3d2514;
-      }
-
-      .menu-btn {
-        display: none;
       }
     }
   `;
@@ -210,7 +207,7 @@ export function Navbar() {
       </label>
       <Menu>
         <MenuResponsive>
-          {menuDate.map((item:string, index:string) => (
+          {menuDate.map((item: { link: string; title: boolean | React.ReactChild | React.ReactFragment | React.ReactPortal | null | undefined; }, index: React.Key | null | undefined) => (
             <NavMenuLinks to={item.link} key={index}>
               {item.title}
             </NavMenuLinks>
