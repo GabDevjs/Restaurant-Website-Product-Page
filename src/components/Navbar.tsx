@@ -9,17 +9,14 @@ export function Navbar() {
     justify-content: space-around;
     align-items: center;
     position: sticky;
+    padding: 10px;
     left: 0;
-    top: 2%;
+    top: 0;
     width: 100%;
     z-index: 1;
-    background-color: transparent;
+    box-shadow: 5px 10px 30px rgba(0, 0, 0, 0.157);
+    background-color: #ffffff;
     transition: 0.6s ease-in-out;
-
-    .active {
-      box-shadow: 5px 10px 30px rgba(0, 0, 0, 0.157);
-      background-color: #ffffff;
-    }
 
     ul {
       display: flex;
@@ -207,11 +204,25 @@ export function Navbar() {
       </label>
       <Menu>
         <MenuResponsive>
-          {menuDate.map((item: { link: string; title: boolean | React.ReactChild | React.ReactFragment | React.ReactPortal | null | undefined; }, index: React.Key | null | undefined) => (
-            <NavMenuLinks to={item.link} key={index}>
-              {item.title}
-            </NavMenuLinks>
-          ))}
+          {menuDate.map(
+            (
+              item: {
+                link: string;
+                title:
+                  | boolean
+                  | React.ReactChild
+                  | React.ReactFragment
+                  | React.ReactPortal
+                  | null
+                  | undefined;
+              },
+              index: React.Key | null | undefined
+            ) => (
+              <NavMenuLinks to={item.link} key={index}>
+                {item.title}
+              </NavMenuLinks>
+            )
+          )}
         </MenuResponsive>
       </Menu>
     </Nav>

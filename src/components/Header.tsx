@@ -6,13 +6,21 @@ import { Navbar } from "./Navbar";
 
 export function Header() {
   const Main = styled.div`
-    margin-left: 3%;
     width: 100%;
+    bottom: 10;
     height: 710px;
     position: relative;
     background-repeat: no-repeat;
     background-size: cover;
     background-image: url(${Background});
+
+    @media (max-width: 1190px) {
+      background-size: 1150px !important;
+    }
+
+    @media (max-width: 970px) {
+      height: 650px;
+    }
   `;
 
   const HeaderH = styled.div`
@@ -50,11 +58,44 @@ export function Header() {
       letter-spacing: 2px;
       color: #3d2514;
     }
+
+    @media (max-width: 1190px) {
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+
+      h2 {
+        font-size: 1.5rem;
+      }
+
+      h1 {
+        font-size: 3rem;
+      }
+
+      .details {
+        font-size: 1rem;
+      }
+    }
+
+    @media (max-width: 970px) {
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    @media (max-width: 600px){
+      width: 60%;
+    }
   `;
 
   const HeaderBtns = styled.div`
     display: flex;
     margin-top: 40px;
+
+    @media(max-width: 1100px){
+      margin: 0;
+    }
   `;
 
   const HeaderBtn = styled(Link)`
@@ -76,11 +117,15 @@ export function Header() {
       color: #3d2514;
       border: 2px solid #bf2222;
     }
+
+    @media (max-width: 970px) {
+      margin-left: 20%;
+      margin-top: 20px;
+    }
   `;
 
   return (
     <Main id="main">
-      <Navbar />
       <HeaderH>
         <h3>Is´s Great Time For A Good Taste Of Burger</h3>
         <h1>
